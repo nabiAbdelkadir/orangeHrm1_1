@@ -1,9 +1,13 @@
-<?php use_stylesheet(plugin_web_path('orangehrmDashboardPlugin', 'css/quicklaunch.css'));
-use_javascript(plugin_web_path('orangehrmDashboardPlugin', 'js/jquery.easing.1.3.js'));
+<?php //use_stylesheet(plugin_web_path('orangehrmDashboardPlugin', 'css/quicklaunch.css'));
+      //use_javascript(plugin_web_path('orangehrmDashboardPlugin', 'js/jquery.easing.1.3.js'));
+
+
 ?>
 
 <style type="text/css">
-    .quickLinkText{
+  <?php
+    /*
+     * .quickLinkText{
         display: block;
         text-align: center;
         color: black;
@@ -15,7 +19,7 @@ use_javascript(plugin_web_path('orangehrmDashboardPlugin', 'js/jquery.easing.1.3
     div.quickLaunge{
         width: 100px;
         height: 80px;
-        vertical-align:middle; 
+        vertical-align:middle;
         text-align:center
     }
     div.quickLaunge img{
@@ -25,11 +29,16 @@ use_javascript(plugin_web_path('orangehrmDashboardPlugin', 'js/jquery.easing.1.3
     table.quickLaungeContainer{
         width: auto;
     }
+     * */
+  ?>
 </style>
+<?php echo stylesheet_tag(theme_path('css/bootstrap.min.css')); ?>
+<?php echo stylesheet_tag(theme_path('css/main_nabi.css')); ?>
 
-<div id="dashboard-quick-launch-panel-container">
-    <div id="dashboard-quick-launch-panel-menu_holder">
-        <table class="quickLaungeContainer">
+<!--<div id="dashboard-quick-launch-panel-container1">-->
+
+    <div id="dashboard-quick-launch-panel-menu_holder"
+         class="row card-options">
             <?php
             $links = $links->getRawValue();
             if ($links) :
@@ -38,34 +47,40 @@ use_javascript(plugin_web_path('orangehrmDashboardPlugin', 'js/jquery.easing.1.3
                 $linkNdx = 0;
                 for ($rows = 0; ($rows < $numRows) && ($linkNdx < $numLinks); $rows++) :
                     ?>
-                    <tr>
                         <?php
                         for ($cols = 0; ($cols < $numCols) && ($linkNdx < $numLinks); $cols++) :
                             $link = $links[$linkNdx];
                             $linkNdx++;
                             ?>
-                            <td>
-                                <div class="quickLaunge">
-                                    <a href="<?php echo url_for($link['url']); ?>" target="<?php echo $link['target'] ?>" >
-                                        <img src="<?php echo plugin_web_path($link['plugin'] , 'images/' . $link['image']) ?>"/>
-                                        <span class="quickLinkText"><?php echo __($link['name']) ?></span>
-                                    </a>
-                                </div>                        
-                            </td>                    
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 " >
+                                        <a   href="<?php echo url_for($link['url']);?>"
+                                             target="<?php echo $link['target'] ?> ">
+                                        <div class="row ">
+                                            <span class="quickLinkText"><?php echo __($link['name']) ?></span>
+                                            <i class="fa fa-user fa-3x pull-right"></i>
+                                        </div>
+                                        </a>
+                                </div>
+
                     <?php endfor; ?>
-                    </tr>
+
                 <?php endfor;
 
             else :
                 ?>
-                <tr><td><?php echo __('No Links'); ?></td></tr>               
-<?php endif;
-?>
+                <?php echo __('No Links'); ?>
+        <?php endif;
+        ?>
 
-        </table>
+
     </div>
-</div>
+<!--</div>-->
 
+<style type="text/css">
+    a:hover{
+        text-decoration: none;
+    }
+</style>
 <script type="text/javascript">
     $(document).ready(function () {
         // hover color change effect
@@ -82,7 +97,7 @@ use_javascript(plugin_web_path('orangehrmDashboardPlugin', 'js/jquery.easing.1.3
                 var distance = e.pageY - $(this).offset().top;
                 // Get the percentage value with respect to the Mouse Y on the 'menu_holder'.
                 var percentage = distance / $(this).height();
-                // Calculate the new Y position of the 'slider'. 
+                // Calculate the new Y position of the 'slider'.
                 var targetY = -Math.round(($("#dashboard-quick-launch-panel-slider").height() - $(this).height()) * percentage);
                 // With jQuery easing funtion from easing plugin.
                 $('#dashboard-quick-launch-panel-slider').animate({top: [targetY + "px", "easeOutCirc"]}, {queue: false, duration: 200});

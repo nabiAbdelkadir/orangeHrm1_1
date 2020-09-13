@@ -1,4 +1,5 @@
-<!--[if lte IE 8]><?php echo javascript_include_tag(plugin_web_path('orangehrmDashboardPlugin', 'js/flot/excanvas.min.js')); ?><![endif]-->
+<!--[if lte IE 8]><
+?php echo javascript_include_tag(plugin_web_path('orangehrmDashboardPlugin', 'js/flot/excanvas.min.js')); ?><![endif]-->
 <?php echo javascript_include_tag(plugin_web_path('orangehrmDashboardPlugin', 'js/flot/jquery.flot.min.js')) ?>
 <?php echo javascript_include_tag(plugin_web_path('orangehrmDashboardPlugin', 'js/flot/jquery.flot.pie.min.js')) ?>
 <?php echo javascript_include_tag(plugin_web_path('orangehrmDashboardPlugin', 'js/flot/JUMFlot.min.js')) ?>
@@ -24,8 +25,8 @@ if ($chart->hasData() || $chart->showEmptyGraph()):
     <script type="text/javascript">
         $(document).ready(function () {
 
-            var data = <?php echo json_encode($chart->getData()->getRawValue()); ?>;
-            var graph = <?php echo json_encode($metaDataObject->getRawValue()); ?>;
+            var data = <?php   echo json_encode($chart->getData()->getRawValue()); ?>;
+            var graph = <?php  echo json_encode($metaDataObject->getRawValue()); ?>;
 
 
             var properties = <?php echo json_encode($chartProperties->getRawValue()); ?>;

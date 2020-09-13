@@ -5,9 +5,9 @@ if ($loadDefault == 'true') {
     $divId = $module_name . '__' . $action_name;
     ?>
 
-    <div class="loadmask" style="height: 100%;" id="<?php
-         echo $divId;
-         ?>">
+    <div class="loadmask testBox" style=" height: 100% ; " id="<?php
+         echo $divId; ?>">
+
     </div>
     <script type="text/javascript">
 
@@ -21,6 +21,7 @@ if ($loadDefault == 'true') {
                 },
                 complete: function () {
                     $("#" + divId).removeClass('loadmask');
+
                 }
             });
         });
