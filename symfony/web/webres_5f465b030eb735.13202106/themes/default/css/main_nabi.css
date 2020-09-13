@@ -1,0 +1,246 @@
+body{
+  background: #f9fbfd;
+}
+*{
+	  font-family: Lato,sans-serif;
+	}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.row div{
+/*  border: 1px solid red;*/
+}
+
+/*Start style navbar*/
+.navbar{
+  background: #424242;
+}
+.navbar  a,.navbar  span{
+  color: white;
+  margin-right: 10px;
+}
+.navbar .img-profile{
+
+}
+#notification,
+#profile-active{
+  position: relative;
+}
+.navbar a span#span-notification{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 8px;
+  position: absolute;
+  right: -18px;
+  top: -8px;
+  text-align: center;
+}
+.navbar a span#span-profile-active{
+  background-color: green;
+  color: green;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 4px;
+  position: absolute;
+  right: -10px;
+  top: 16px;
+  text-align: center;
+}
+.navbar .dropdown-toggle::after {
+		display: none;
+}
+.navbar .dropdown-menu {
+	margin-left: -185px;
+	margin-top: 8px;
+}
+.navbar .dropdown-menu a.dropdown-item {
+	color: black;
+}
+.navbar img {
+  width: 22px;
+  height: 22px;
+}
+/*End style navbar*/
+/***************start style index page***********/
+.sidebar-content{
+  padding-top: 20px;
+  background: white;
+  box-shadow: 5px 5px 5px #eee;
+
+}
+.nav-label{
+  margin-right: 10px;
+}
+ul.sub-list li{
+  margin-left: 15px;/*this*/
+}
+.sidebar-content {
+	padding-bottom: 15px;
+}
+.sidebar-content li{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all .5s ease-in-out ;
+}
+.sidebar-content .sub-menu li a{
+  font-size: 12px;
+}
+.sidebar-content li a{
+  color: #8d9498;
+  font-size: 14px;
+  transition: all .3s ease-in-out ;
+
+}
+.sidebar-content li a.active{
+  color: #000;
+  font-weight: bold;
+}
+.sidebar-content li a:hover{
+  text-decoration: none;
+  color: #000;
+}
+.sub-menu{
+  margin-left: 15px;
+  color: red;
+}
+.sidebar-content .progress{
+  margin-bottom: 15px;
+  margin-top: 10px;
+  height: 5px;
+}
+.icons{
+  background: #eee;
+  justify-content: space-evenly;
+  padding-top:  30px;
+  padding-bottom: 30px;
+}
+.icons >.fa{
+  width:33%;
+}
+/*********************** End style sidebar *****************************/
+/*********************** start style card-options ***********************/
+
+.card-options  >div  {
+  padding: 10px;
+}
+.card-options  >div div {
+  padding: 20px 15px ;
+  transition: all .3s ease-in-out ;
+  align-items: center;
+  min-height: 120px;
+}
+.card-options div:first-of-type div{
+  background: #3689E5;
+}
+
+.card-options div:nth-of-type(2) div{
+  background: #8E24AA;
+}
+.card-options div:nth-of-type(3) div{
+    background: #43A047;
+}
+.card-options div:nth-of-type(4) div{
+    background: #E53934;
+}
+.card-options div:nth-of-type(5) div{
+  background: #5f27cd;
+}
+.card-options div:nth-of-type(6) div{
+  background: #54a0ff;
+}
+
+.card-options div:first-of-type div:hover{
+		box-shadow: 5px 5px 5px rgb(0 0 255 /0.2);
+}
+.card-options div:nth-of-type(2) div:hover{
+		box-shadow: 5px 5px 5px #8e24aa80;
+}
+.card-options div:nth-of-type(3) div:hover{
+		box-shadow: 5px 5px 5px #43a04780;
+}
+.card-options div:nth-of-type(4) div:hover{
+		box-shadow: 5px 5px 5px #e5393480;
+}
+.card-options  span{
+  font-size: 22px;
+  color: white;
+  flex: 1;
+  font-family: sans-serif;
+}
+.card-options i.fa {
+  margin-top: 18px;
+}
+.card-options a{
+  color: #cccccc80;
+}
+.card-options a:hover{
+  text-decoration: none;
+}
+/*************End style***************/
+.container-statistique{
+  margin-top: 20px;
+}
+.container-statistique-cercel,
+.container-statistique-table{
+  padding: 10px;
+}
+.container-statistique .testBox {
+  box-shadow: 5px 5px 5px #eee;
+  background: white;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.container-statistique div div{
+
+}
+.container-statistique-cercel p{
+  margin-top: 10px;
+  color: #aaa;
+}
+.container-statistique-cercel .card {
+  border: none;
+}
+/************************/
+.container-statistique-table{
+  padding: 15px;
+}
+.container-statistique-table p{
+  font-weight: 700;
+}
+.container-statistique-table .dot {
+  height: 25px;
+  width: 25px;
+  background-color: #DC3545;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+}
+.circle-img{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.container-statistique-table td.row{
+  justify-content: space-around;
+}
+.container-statistique-table td.row i{
+  width: 33%;
+}
+table tr.title th{
+  color: black;
+  font-weight: bold;
+}
+table td,
+table th {
+	cursor: pointer;
+  color: #aaa;
+  font-weight:normal;
+  font-size: 14px;
+}
+.cursor-pointer{
+	cursor: pointer;
+}
